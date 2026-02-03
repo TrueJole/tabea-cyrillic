@@ -1,0 +1,165 @@
+[
+	{
+		"cyrillic-upper" : "А",
+		"cyrillic-lower" : "а",
+		"pronounciation" : ["wie a"]
+	},
+	{
+		"cyrillic-upper" : "Б",
+		"cyrillic-lower" : "б",
+		"pronounciation" : ["wie b"]
+	},
+	{
+		"cyrillic-upper" : "В",
+		"cyrillic-lower" : "в",
+		"pronounciation" : ["wie w"]
+	},
+	{
+		"cyrillic-upper" : "Г",
+		"cyrillic-lower" : "г",
+		"pronounciation" : ["wie g"]
+	},
+	{
+		"cyrillic-upper" : "Д",
+		"cyrillic-lower" : "д",
+		"pronounciation" : ["wie d"]
+	},
+	{
+		"cyrillic-upper" : "Е",
+		"cyrillic-lower" : "е",
+		"pronounciation" : ["betont wie e", 
+		"unbetont ähnlich i",
+		"am Wortanfang wie je"]
+	},
+	{
+		"cyrillic-upper" : "Ё",
+		"cyrillic-lower" : "ё",
+		"pronounciation" : ["wie jo in Josef", "wie o (nach ж, ч, ш, щ)"]
+	},
+	{
+		"cyrillic-upper" : "Ж",
+		"cyrillic-lower" : "ж",
+		"pronounciation" : ["wie j in Journalist"]
+	},
+	{
+		"cyrillic-upper" : "З",
+		"cyrillic-lower" : "з",
+		"pronounciation" : ["wie s in Rose"]
+	},
+	{
+		"cyrillic-upper" : "И",
+		"cyrillic-lower" : "и",
+		"pronounciation" : ["wie i"]
+	},
+	{
+		"cyrillic-upper" : "Й",
+		"cyrillic-lower" : "й",
+		"pronounciation" : ["wie i in Mai (nach a, o, y, ю, я, wenn danach kein е oder о folgt)",
+		"wie j in ja (vor e,o; nach e)", "nicht gesprochen (nach и und ы)"]
+	},
+	{
+		"cyrillic-upper" : "К",
+		"cyrillic-lower" : "к",
+		"pronounciation" : ["wie k"]
+	},
+	{
+		"cyrillic-upper" : "Л",
+		"cyrillic-lower" : "л",
+		"pronounciation" : ["wie l"]
+	},
+	{
+		"cyrillic-upper" : "М",
+		"cyrillic-lower" : "м",
+		"pronounciation" : ["wie m"]
+	},
+	{
+		"cyrillic-upper" : "Н",
+		"cyrillic-lower" : "н",
+		"pronounciation" : ["wie n"]
+	},
+	{
+		"cyrillic-upper" : "О",
+		"cyrillic-lower" : "о",
+		"pronounciation" : ["betont wie o", "sont wie a"]
+	},
+	{
+		"cyrillic-upper" : "П",
+		"cyrillic-lower" : "п",
+		"pronounciation" : ["wie p"]
+	},
+	{
+		"cyrillic-upper" : "Р",
+		"cyrillic-lower" : "р",
+		"pronounciation" : ["wie r"]
+	},
+	{
+		"cyrillic-upper" : "C",
+		"cyrillic-lower" : "c",
+		"pronounciation" : ["wie s in Wasser"]
+	},
+	{
+		"cyrillic-upper" : "У",
+		"cyrillic-lower" : "у",
+		"pronounciation" : ["wie u"]
+	},
+	{
+		"cyrillic-upper" : "Ф",
+		"cyrillic-lower" : "ф",
+		"pronounciation" : ["wie f"]
+	},
+	{
+		"cyrillic-upper" : "Х",
+		"cyrillic-lower" : "х",
+		"pronounciation" : ["wie ch in Acht"]
+	},
+	{
+		"cyrillic-upper" : "Ц",
+		"cyrillic-lower" : "ц",
+		"pronounciation" : ["wie z"]
+	},
+	{
+		"cyrillic-upper" : "Ч",
+		"cyrillic-lower" : "ч",
+		"pronounciation" : ["wie tsch in Hatschi"]
+	},
+	{
+		"cyrillic-upper" : "Ш",
+		"cyrillic-lower" : "ш",
+		"pronounciation" : ["wie sch in Scheu"]
+	},
+	{
+		"cyrillic-upper" : "Щ",
+		"cyrillic-lower" : "щ",
+		"pronounciation" : ["wie schtsch (weiches sch)"]
+	},
+	{
+		"cyrillic-upper" : "Ъ",
+		"cyrillic-lower" : "ъ",
+		"pronounciation" : ["nicht gesprochen", "macht vorangehenden Konsonanten hart"]
+	},
+	{
+		"cyrillic-upper" : "Ы",
+		"cyrillic-lower" : "ы",
+		"pronounciation" : ["wie y"]
+	},
+	{
+		"cyrillic-upper" : "Ь",
+		"cyrillic-lower" : "ь",
+		"pronounciation" : ["nicht gesprochen", "macht vorangehenden Konsonanten weich/palatalisiert"]
+	},
+	{
+		"cyrillic-upper" : "Э",
+		"cyrillic-lower" : "э",
+		"pronounciation" : ["wie ä"]
+	},
+	{
+		"cyrillic-upper" : "Ю",
+		"cyrillic-lower" : "ю",
+		"pronounciation" : ["wie ju in Justiz"]
+	},
+	{
+		"cyrillic-upper" : "Я",
+		"cyrillic-lower" : "я",
+		"pronounciation" : ["wie ja in Japan", "unbetont ähnlich wie i"]
+	}
+]
