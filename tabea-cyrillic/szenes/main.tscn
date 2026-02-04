@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://chmnom5ywngk8" path="res://scripts/main.gd" id="1_3rjh4"]
 [ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="2_m6yd5"]
+[ext_resource type="PackedScene" uid="uid://cct22xoy1ilbh" path="res://szenes/logo_button.tscn" id="2_rfvpj"]
 [ext_resource type="PackedScene" uid="uid://dbcqiv2obxa3t" path="res://szenes/pronounciation_label.tscn" id="3_4b4it"]
-[ext_resource type="Script" uid="uid://dtb1at4l6b428" path="res://scripts/settings_button.gd" id="3_acw1b"]
-[ext_resource type="Texture2D" uid="uid://q5ak3drdnvm2" path="res://assets/settings.svg" id="3_dce7b"]
-[ext_resource type="PackedScene" uid="uid://d2wj72kv2cgc1" path="res://szenes/Settings.tscn" id="3_drcd3"]
+[ext_resource type="Script" uid="uid://d0eakr55vfq3n" path="res://scripts/autoadjust.gd" id="5_rrd6t"]
 
 [node name="Main" type="Control" unique_id=776756791]
 layout_mode = 3
@@ -34,35 +33,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 23
-
-[node name="SettingsButton" type="Button" parent="MarginContainer" unique_id=1490197595]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_type_variation = &"IconButton"
-theme_override_constants/icon_max_width = 140
-icon = ExtResource("3_dce7b")
-icon_alignment = 1
-script = ExtResource("3_acw1b")
+theme_override_constants/margin_top = 117
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1111807055]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="LetterLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=21209220]
+[node name="LetterLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=816631329]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 700)
+clip_contents = false
+custom_minimum_size = Vector2(900, 600)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("2_m6yd5")
 theme_type_variation = &"LetterLabel"
-text = "Таб"
+theme_override_font_sizes/normal_font_size = 102
+text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("5_rrd6t")
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1574215151]
 visible = false
@@ -78,32 +68,37 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="RevealButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1387345886]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1746292060]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Answers" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer" unique_id=1769548524]
 unique_name_in_owner = true
 layout_mode = 2
-theme_type_variation = &"IconButton"
-text = "Reveal"
+size_flags_horizontal = 3
+size_flags_vertical = 0
 
-[node name="Answers" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1769548524]
+[node name="PronounciationLabel" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Answers" unique_id=1516915026 instance=ExtResource("3_4b4it")]
+layout_mode = 2
+
+[node name="PronounciationLabel2" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Answers" unique_id=1279792452 instance=ExtResource("3_4b4it")]
+layout_mode = 2
+
+[node name="PronounciationLabel3" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Answers" unique_id=1669833971 instance=ExtResource("3_4b4it")]
+layout_mode = 2
+
+[node name="PronounciationLabel4" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Answers" unique_id=1069220089 instance=ExtResource("3_4b4it")]
+layout_mode = 2
+
+[node name="PronounciationLabel5" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Answers" unique_id=1458044876 instance=ExtResource("3_4b4it")]
+layout_mode = 2
+
+[node name="RevealButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1387345886]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-size_flags_vertical = 0
-
-[node name="PronounciationLabel" parent="MarginContainer/VBoxContainer/MarginContainer/Answers" unique_id=1516915026 instance=ExtResource("3_4b4it")]
-layout_mode = 2
-
-[node name="PronounciationLabel2" parent="MarginContainer/VBoxContainer/MarginContainer/Answers" unique_id=1279792452 instance=ExtResource("3_4b4it")]
-layout_mode = 2
-
-[node name="PronounciationLabel3" parent="MarginContainer/VBoxContainer/MarginContainer/Answers" unique_id=1669833971 instance=ExtResource("3_4b4it")]
-layout_mode = 2
-
-[node name="PronounciationLabel4" parent="MarginContainer/VBoxContainer/MarginContainer/Answers" unique_id=1069220089 instance=ExtResource("3_4b4it")]
-layout_mode = 2
-
-[node name="PronounciationLabel5" parent="MarginContainer/VBoxContainer/MarginContainer/Answers" unique_id=1458044876 instance=ExtResource("3_4b4it")]
-layout_mode = 2
+theme_type_variation = &"IconButton"
+text = "Reveal"
 
 [node name="EvaluationButtons" type="HBoxContainer" parent="MarginContainer" unique_id=702166180]
 unique_name_in_owner = true
@@ -125,21 +120,10 @@ layout_mode = 2
 theme_type_variation = &"IconButton"
 text = "✓"
 
-[node name="LogoLabel" type="Label" parent="MarginContainer" unique_id=1000660181]
-z_index = 17
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_type_variation = &"LogoLabel"
-text = "Табеа"
-
-[node name="Settings" parent="." unique_id=1123940602 instance=ExtResource("3_drcd3")]
-unique_name_in_owner = true
-visible = false
-z_index = 2
+[node name="LogoButton" parent="." unique_id=419415473 instance=ExtResource("2_rfvpj")]
 layout_mode = 1
 
-[connection signal="pressed" from="MarginContainer/SettingsButton" to="MarginContainer/SettingsButton" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/RevealButton" to="." method="_on_reveal_button_pressed"]
 [connection signal="pressed" from="MarginContainer/EvaluationButtons/WrongButton" to="." method="_on_wrong_button_pressed"]
 [connection signal="pressed" from="MarginContainer/EvaluationButtons/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="LogoButton" to="." method="_on_logo_button_pressed"]

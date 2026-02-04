@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://gjocejk3rjyb"]
+
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="1_eafgb"]
+[ext_resource type="Script" uid="uid://du6s0eijjno6i" path="res://scripts/question_button.gd" id="2_otv3e"]
+
+[node name="Button" type="Button" unique_id=833730774]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme = ExtResource("1_eafgb")
+theme_type_variation = &"QuestionButton"
+text = "Test Text 123 dies ist eine mmmmmmmmmmmm  ugj ihjhjh ihkihjhj"
+alignment = 0
+text_overrun_behavior = 5
+script = ExtResource("2_otv3e")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

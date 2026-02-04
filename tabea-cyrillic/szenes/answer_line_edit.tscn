@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dsdkcsu4lqsrx"]
+
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="1_stbvd"]
+[ext_resource type="Script" uid="uid://cor6ll3fexj0g" path="res://scripts/answer_line_edit.gd" id="2_bs5u7"]
+
+[node name="AnswerLineEdit" type="LineEdit" unique_id=2098261729]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme = ExtResource("1_stbvd")
+placeholder_text = "Answer...."
+script = ExtResource("2_bs5u7")
+
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="text_changed" from="." to="." method="_on_text_changed"]
+[connection signal="text_submitted" from="." to="." method="_on_text_submitted"]

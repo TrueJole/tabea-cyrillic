@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Табеа"
-config/version="0.2"
-run/main_scene="uid://b04vt18h530x3"
+config/version="1.0"
+run/main_scene="uid://cj28jotdlpd0g"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/low_processor_mode=true
 boot_splash/bg_color=Color(0.003921569, 0.09019608, 0.1254902, 1)
@@ -26,6 +26,15 @@ config/low_processor_mode=true
 
 SaveLoad="*uid://c8hws0sw72utq"
 Constants="*uid://bvhv4mc24prag"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/inferred_declaration=2
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+gdscript/warnings/unsafe_cast=2
+gdscript/warnings/unsafe_call_argument=2
 
 [display]
 

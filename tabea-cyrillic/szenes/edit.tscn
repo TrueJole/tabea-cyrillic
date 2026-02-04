@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://dm3032vht7se"]
+
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="1_pweqy"]
+[ext_resource type="PackedScene" uid="uid://cct22xoy1ilbh" path="res://szenes/logo_button.tscn" id="2_2wypn"]
+[ext_resource type="Script" uid="uid://dqxtsnobpg8jo" path="res://scripts/edit.gd" id="2_bxtaq"]
+[ext_resource type="PackedScene" uid="uid://dsdkcsu4lqsrx" path="res://szenes/answer_line_edit.tscn" id="3_sbwty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbwty"]
+bg_color = Color(0.0071231346, 0.13136253, 0.17666835, 1)
+
+[node name="Edit" type="Control" unique_id=2098872861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pweqy")
+script = ExtResource("2_bxtaq")
+
+[node name="Panel" type="Panel" parent="." unique_id=753509889]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pweqy")
+theme_type_variation = &"BackgroundPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2142551124]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 140
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1518184531]
+custom_minimum_size = Vector2(0, 1400)
+layout_mode = 2
+size_flags_vertical = 0
+vertical_scroll_mode = 2
+scroll_hint_mode = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/ScrollContainer" unique_id=1554382859]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sbwty")
+
+[node name="QuestionList" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=584622326]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1583471191]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=515363080]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="AddButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1828561826]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add Question"
+
+[node name="LogoButton" parent="." unique_id=419415473 instance=ExtResource("2_2wypn")]
+layout_mode = 1
+
+[node name="EditPage" type="Panel" parent="." unique_id=1417707196]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SettingsBackground"
+
+[node name="MarginContainer" type="MarginContainer" parent="EditPage" unique_id=1794880017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditPage/MarginContainer" unique_id=75180733]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 65
+
+[node name="QuestionField" type="TextEdit" parent="EditPage/MarginContainer/VBoxContainer" unique_id=701851407]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 0
+text = "fddddddddgDDDfgdgs
+asfasfasfsaf
+asfdasfsafmjskjkfkllsa
+sakaslfklsakfl
+dsksfdk
+kdpsdkfpksd
+dsklflksdlfk
+kdlskflksdf
+sdkflkdlf"
+placeholder_text = "Write your question here:"
+wrap_mode = 1
+
+[node name="HSeparator" type="HSeparator" parent="EditPage/MarginContainer/VBoxContainer" unique_id=253881062]
+visible = false
+layout_mode = 2
+
+[node name="AnswerList" type="VBoxContainer" parent="EditPage/MarginContainer/VBoxContainer" unique_id=1999378095]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 17
+
+[node name="AnswerLineEdit" parent="EditPage/MarginContainer/VBoxContainer/AnswerList" unique_id=2098261729 instance=ExtResource("3_sbwty")]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Test Test"
+
+[node name="AnswerLineEdit2" parent="EditPage/MarginContainer/VBoxContainer/AnswerList" unique_id=584296769 instance=ExtResource("3_sbwty")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="EditPage/MarginContainer" unique_id=1244752394]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="RemoveButton" type="Button" parent="EditPage/MarginContainer/VBoxContainer2" unique_id=1449482113]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+text = "Remove"
+
+[node name="DoneButton" type="Button" parent="EditPage/MarginContainer/VBoxContainer2" unique_id=1119666341]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+text = "Done"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="LogoButton" to="." method="_on_logo_button_pressed"]
+[connection signal="pressed" from="EditPage/MarginContainer/VBoxContainer2/RemoveButton" to="." method="_on_remove_button_pressed"]
+[connection signal="pressed" from="EditPage/MarginContainer/VBoxContainer2/DoneButton" to="." method="_on_done_button_pressed"]
