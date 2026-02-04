@@ -15,10 +15,12 @@ config/version="0.2"
 run/main_scene="uid://b04vt18h530x3"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/low_processor_mode=true
-boot_splash/bg_color=Color(0.03137255, 0.5137255, 0.58431375, 1)
-boot_splash/stretch_mode=2
-boot_splash/image="uid://cb71sl0o0vqx"
+boot_splash/bg_color=Color(0.003921569, 0.09019608, 0.1254902, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://d32qm3x83r6ph"
 config/icon="uid://cb71sl0o0vqx"
+boot_splash/minimum_display_time=500
+config/low_processor_mode=true
 
 [autoload]
 

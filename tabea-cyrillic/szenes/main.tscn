@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="2_m6yd5"]
 [ext_resource type="PackedScene" uid="uid://dbcqiv2obxa3t" path="res://szenes/pronounciation_label.tscn" id="3_4b4it"]
 [ext_resource type="Script" uid="uid://dtb1at4l6b428" path="res://scripts/settings_button.gd" id="3_acw1b"]
+[ext_resource type="Texture2D" uid="uid://q5ak3drdnvm2" path="res://assets/settings.svg" id="3_dce7b"]
 [ext_resource type="PackedScene" uid="uid://d2wj72kv2cgc1" path="res://szenes/Settings.tscn" id="3_drcd3"]
 
 [node name="Main" type="Control" unique_id=776756791]
@@ -42,7 +43,9 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_type_variation = &"IconButton"
-text = "⚙"
+theme_override_constants/icon_max_width = 140
+icon = ExtResource("3_dce7b")
+icon_alignment = 1
 script = ExtResource("3_acw1b")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1111807055]
@@ -62,6 +65,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1574215151]
+visible = false
 z_index = 1
 layout_mode = 2
 size_flags_vertical = 4

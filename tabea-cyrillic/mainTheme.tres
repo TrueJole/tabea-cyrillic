@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://dkjhj45ovnkx0" path="res://assets/AdwaitaSans-Regular.ttf" id="1_re4k2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o22io"]
-bg_color = Color(0.0025857585, 0.09165276, 0.1266413, 1)
+bg_color = Color(0.003921569, 0.09019608, 0.1254902, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_rs583"]
 base_font = ExtResource("1_re4k2")

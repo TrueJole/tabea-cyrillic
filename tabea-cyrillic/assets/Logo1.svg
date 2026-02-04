@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="svg" href="#object-0" path="Unbetitelt.svg" excluded="true"/>
+      <bx:file format="png" href="#object-0" path="Unbetitelt.png"/>
+      <bx:file format="svg" path="Unbetitelt 2.svg"/>
+    </bx:export>
+  </defs>
+  <rect width="500" height="500" style="fill: rgb(7, 131, 149); paint-order: stroke; fill-rule: nonzero;" y="0" x="0"/>
+  <rect width="50" height="500" style="paint-order: stroke; fill-rule: nonzero; stroke-width: 1; fill: rgb(9, 99, 126);" y="0" x="0"/>
+  <text style="fill: rgb(255, 255, 255); font-family: &quot;Adwaita Sans&quot;; font-size: 169.3px; font-weight: 700; letter-spacing: -20px; stroke-miterlimit: 1; text-transform: capitalize; word-spacing: -3.1px; white-space: pre;" x="61.85" y="300.342" id="object-0">Табеа</text>
+</svg>
