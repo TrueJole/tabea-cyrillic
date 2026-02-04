@@ -1,16 +1,23 @@
 [gd_resource type="Theme" format=3 uid="uid://dethatjpkswlp"]
 
+[ext_resource type="FontFile" uid="uid://dkjhj45ovnkx0" path="res://assets/AdwaitaSans-Regular.ttf" id="1_re4k2"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o22io"]
 bg_color = Color(0.0025857585, 0.09165276, 0.1266413, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_t3kcy"]
-font_names = PackedStringArray("Adwaita Sans")
-font_weight = 575
+[sub_resource type="FontVariation" id="FontVariation_rs583"]
+base_font = ExtResource("1_re4k2")
+variation_opentype = {
+1869640570: 14,
+2003265652: 260
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3kcy"]
 bg_color = Color(0.03137255, 0.5137255, 0.58431375, 1)
 border_width_left = 30
 border_color = Color(0.03529412, 0.3882353, 0.49411765, 1)
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rs583"]
 bg_color = Color(0.03137255, 0.5137255, 0.58431375, 1)
@@ -22,35 +29,79 @@ grow_begin = 0.0
 grow_end = 0.0
 thickness = 11
 
+[sub_resource type="FontVariation" id="FontVariation_4gdb8"]
+base_font = ExtResource("1_re4k2")
+variation_opentype = {
+1869640570: 14,
+2003265652: 600
+}
+
+[sub_resource type="FontVariation" id="FontVariation_o22io"]
+base_font = ExtResource("1_re4k2")
+variation_opentype = {
+1869640570: 14,
+2003265652: 260
+}
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3kcy"]
 content_margin_left = 40.0
 
-[sub_resource type="SystemFont" id="SystemFont_re4k2"]
-font_names = PackedStringArray("Adwaita Sans")
-font_weight = 675
+[sub_resource type="FontVariation" id="FontVariation_re4k2"]
+base_font = ExtResource("1_re4k2")
+variation_opentype = {
+1869640570: 14,
+2003265652: 600
+}
+
+[sub_resource type="FontVariation" id="FontVariation_ntyar"]
+base_font = ExtResource("1_re4k2")
+variation_opentype = {
+1869640570: 14,
+2003265652: 700
+}
+opentype_features = {
+1801810542: 1
+}
+spacing_glyph = -13
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_re4k2"]
 bg_color = Color(0.03137255, 0.5137255, 0.58431375, 1)
 border_width_left = 30
 border_color = Color(0.03529412, 0.3882353, 0.49411765, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdb8"]
+bg_color = Color(0, 0, 0, 0.92156863)
+
 [resource]
 BackgroundPanel/base_type = &"Panel"
 BackgroundPanel/styles/panel = SubResource("StyleBoxFlat_o22io")
 Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 100
-Button/fonts/font = SubResource("SystemFont_t3kcy")
+Button/font_sizes/font_size = 120
+Button/fonts/font = SubResource("FontVariation_rs583")
 Button/styles/hover = SubResource("StyleBoxFlat_t3kcy")
 Button/styles/normal = SubResource("StyleBoxFlat_t3kcy")
 Button/styles/pressed = SubResource("StyleBoxFlat_rs583")
+HBoxContainer/constants/separation = 30
 HSeparator/styles/separator = SubResource("StyleBoxLine_t3kcy")
+IconButton/base_type = &"Button"
+IconButton/fonts/font = SubResource("FontVariation_4gdb8")
 Label/colors/font_color = Color(1, 1, 1, 1)
-Label/fonts/font = SubResource("SystemFont_t3kcy")
+Label/font_sizes/font_size = 120
+Label/fonts/font = SubResource("FontVariation_o22io")
 Label/styles/normal = SubResource("StyleBoxEmpty_t3kcy")
 LetterLabel/base_type = &"Label"
-LetterLabel/font_sizes/font_size = 500
-LetterLabel/fonts/font = SubResource("SystemFont_re4k2")
+LetterLabel/font_sizes/font_size = 450
+LetterLabel/fonts/font = SubResource("FontVariation_re4k2")
+LogoLabel/base_type = &"Label"
+LogoLabel/font_sizes/font_size = 100
+LogoLabel/fonts/font = SubResource("FontVariation_ntyar")
+MarginContainer/constants/margin_bottom = 40
+MarginContainer/constants/margin_left = 40
+MarginContainer/constants/margin_right = 40
+MarginContainer/constants/margin_top = 40
 Panel/styles/panel = SubResource("StyleBoxFlat_re4k2")
 PronounciationLabel/base_type = &"Label"
 PronounciationLabel/font_sizes/font_size = 90
+SettingsBackground/base_type = &"Panel"
+SettingsBackground/styles/panel = SubResource("StyleBoxFlat_4gdb8")
 VBoxContainer/constants/separation = 10

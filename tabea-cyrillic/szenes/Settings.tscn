@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d2wj72kv2cgc1"]
+
+[ext_resource type="Script" uid="uid://2sxeq6b2x0dq" path="res://scripts/reset_button.gd" id="1_twgma"]
+[ext_resource type="Script" uid="uid://d3esd6ntv1iiq" path="res://scripts/exit_button.gd" id="2_vvyu6"]
+
+[node name="Settings" type="Panel" unique_id=1123940602]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SettingsBackground"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=712484570]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -269.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1121489068]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1921929805]
+layout_mode = 2
+text = "Settings"
+
+[node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1095128289]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reset Memory"
+script = ExtResource("1_twgma")
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1263857984]
+layout_mode = 2
+text = "Made with <3"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=912641483]
+layout_mode = 2
+text = "Exit
+"
+script = ExtResource("2_vvyu6")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ResetButton" to="MarginContainer/VBoxContainer/ResetButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="MarginContainer/VBoxContainer/ExitButton" method="_on_pressed"]
