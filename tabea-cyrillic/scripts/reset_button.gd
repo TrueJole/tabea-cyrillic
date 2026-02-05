@@ -1,6 +1,6 @@
 extends Button
 
 func _on_pressed() -> void:
-	SaveLoad.data = []
-	SaveLoad.data.resize(Constants.ELEMENTS)
-	SaveLoad.write()
+	SaveLoad.savegame = []
+	SaveLoad.savegame.resize(Constants.NUMBER_QUESTIONS)
+	SaveLoad.writeSavegame()

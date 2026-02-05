@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cj28jotdlpd0g"]
+
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="1_cy1bs"]
+[ext_resource type="Script" uid="uid://bpnf8yoqrcgxc" path="res://scripts/menu.gd" id="1_yquox"]
+[ext_resource type="Texture2D" uid="uid://q5ak3drdnvm2" path="res://assets/settings.svg" id="2_yquox"]
+[ext_resource type="Script" uid="uid://dtb1at4l6b428" path="res://scripts/settings_button.gd" id="4_3o7n6"]
+[ext_resource type="PackedScene" uid="uid://d2wj72kv2cgc1" path="res://szenes/Settings.tscn" id="5_yqa7s"]
+
+[node name="Menu" type="Control" unique_id=786143845]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yquox")
+
+[node name="Panel" type="Panel" parent="." unique_id=96259315]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cy1bs")
+theme_type_variation = &"BackgroundPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1990843405]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 23
+
+[node name="SettingsButton2" type="Button" parent="Panel/MarginContainer" unique_id=562195930]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_type_variation = &"IconButton"
+icon = ExtResource("2_yquox")
+icon_alignment = 1
+script = ExtResource("4_3o7n6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1264178014]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="LogoLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=222500867]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"MainLogo"
+text = "Табеа"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartQuizButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1154042729]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Quiz"
+
+[node name="LernButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=84377856]
+layout_mode = 2
+text = "Learning"
+
+[node name="EditQuizButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=951239563]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Edit Quiz"
+
+[node name="SettingsButton" type="Button" parent="Panel/MarginContainer" unique_id=282606975]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_type_variation = &"IconButton"
+theme_override_constants/icon_max_width = 140
+icon = ExtResource("2_yquox")
+icon_alignment = 1
+
+[node name="LogoLabel" type="Label" parent="." unique_id=734923070]
+visible = false
+z_index = 17
+layout_mode = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_type_variation = &"LogoLabel"
+text = "Табеа"
+
+[node name="Settings" parent="." unique_id=1123940602 instance=ExtResource("5_yqa7s")]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+layout_mode = 1
+
+[connection signal="pressed" from="Panel/MarginContainer/SettingsButton2" to="Panel/MarginContainer/SettingsButton2" method="_on_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/StartQuizButton" to="." method="_on_start_quiz_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/EditQuizButton" to="." method="_on_edit_quiz_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/SettingsButton" to="Panel/MarginContainer/SettingsButton" method="_on_pressed"]

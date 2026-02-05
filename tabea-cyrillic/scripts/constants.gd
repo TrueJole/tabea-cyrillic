@@ -1,3 +1,4 @@
 extends Node
 
-const ELEMENTS: int = 32
+const DEFAULT_ELEMENTS: int = 32
+var NUMBER_QUESTIONS: int
