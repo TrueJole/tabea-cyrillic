@@ -17,7 +17,7 @@ func _on_text_changed(new_text: String) -> void:
 		
 
 func _on_text_submitted(new_text: String) -> void:
-	get_parent().get_child(get_index()+1) .grab_focus()
+	get_parent().get_child(get_index()+1).grab_focus()
 
 
 func _on_focus_exited() -> void:

@@ -118,19 +118,27 @@ wrap_mode = 1
 visible = false
 layout_mode = 2
 
-[node name="AnswerList" type="VBoxContainer" parent="EditPage/MarginContainer/VBoxContainer" unique_id=1999378095]
+[node name="ScrollContainer" type="ScrollContainer" parent="EditPage/MarginContainer/VBoxContainer" unique_id=1035669981]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_pweqy")
+horizontal_scroll_mode = 0
+scroll_hint_mode = 3
+
+[node name="AnswerList" type="VBoxContainer" parent="EditPage/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1999378095]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 17
 
-[node name="AnswerLineEdit" parent="EditPage/MarginContainer/VBoxContainer/AnswerList" unique_id=2098261729 instance=ExtResource("3_sbwty")]
+[node name="AnswerLineEdit" parent="EditPage/MarginContainer/VBoxContainer/ScrollContainer/AnswerList" unique_id=2098261729 instance=ExtResource("3_sbwty")]
 layout_mode = 2
 size_flags_vertical = 4
 text = "Test Test"
 
-[node name="AnswerLineEdit2" parent="EditPage/MarginContainer/VBoxContainer/AnswerList" unique_id=584296769 instance=ExtResource("3_sbwty")]
+[node name="AnswerLineEdit2" parent="EditPage/MarginContainer/VBoxContainer/ScrollContainer/AnswerList" unique_id=584296769 instance=ExtResource("3_sbwty")]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="EditPage/MarginContainer" unique_id=1244752394]

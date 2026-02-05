@@ -8,7 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_start_quiz_button_pressed() -> void:
-	if SaveLoad.questions.size() > 0:
+	if SaveLoad.questions.size() >= 2:
 		add_sibling(MAIN.instantiate())
 		queue_free()
 

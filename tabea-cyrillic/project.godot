@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Табеа"
-config/version="1.0"
+config/version="1.0.1"
 run/main_scene="uid://cj28jotdlpd0g"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/low_processor_mode=true
