@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_cy1bs")
 script = ExtResource("1_yquox")
 
 [node name="Panel" type="Panel" parent="." unique_id=96259315]
@@ -36,7 +37,7 @@ grow_vertical = 2
 theme_override_constants/margin_top = 23
 
 [node name="SettingsButton2" type="Button" parent="Panel/MarginContainer" unique_id=562195930]
-custom_minimum_size = Vector2(200, 150)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -64,7 +65,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Start Quiz"
 
-[node name="LernButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=84377856]
+[node name="LearnButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=84377856]
 layout_mode = 2
 text = "Learning"
 

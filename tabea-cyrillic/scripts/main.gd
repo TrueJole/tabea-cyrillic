@@ -12,6 +12,8 @@ func _ready() -> void:
 	newGuess()
 	
 func newGuess() -> void:
+	print(Constants.selectedQuizzes)
+	print(currentQuizID)
 	SaveLoad.writeSavegame()
 	%Answers.hide()
 	for label: Label in %Answers.get_children():
@@ -33,14 +35,17 @@ func newGuess() -> void:
 	while true:
 		var randomPicker: float = randf_range(0, totalSum)
 		var currentSum: float = 0
+		var break_condition: bool = false
 		for quizID: String in Constants.selectedQuizzes:
 			for x: int in range(SaveLoad.savegame[quizID].size()):
 				if currentSum + pow(2, SaveLoad.savegame[quizID][x]) > randomPicker:
 					currentQuestionID = x
 					currentQuizID = quizID
+					break_condition = true
 					break
 				currentSum += pow(2, SaveLoad.savegame[quizID][x])
-			
+			if break_condition:
+				break
 		if currentQuestionID != lastQuestionID or currentQuizID != lastQuizID:
 			break
 	

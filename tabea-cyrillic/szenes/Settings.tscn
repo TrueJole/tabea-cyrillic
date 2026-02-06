@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d2wj72kv2cgc1"]
 
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="1_p2x70"]
 [ext_resource type="Script" uid="uid://2sxeq6b2x0dq" path="res://scripts/reset_button.gd" id="1_twgma"]
 [ext_resource type="Script" uid="uid://d3esd6ntv1iiq" path="res://scripts/exit_button.gd" id="2_vvyu6"]
 
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_p2x70")
 theme_type_variation = &"SettingsBackground"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=712484570]

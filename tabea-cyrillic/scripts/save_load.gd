@@ -19,7 +19,8 @@ func _ready() -> void:
 		#Constants.NUMBER_QUESTIONS = questions.size()
 		print("Loaded questions")
 	else:
-		quizzes = { "abc123" : preload("res://assets/letters.json").data}
+		quizzes = { "a": JSON.to_native(preload("res://assets/Kyrillische Buchstaben_2026-02-06_18-56-58.json").data), "b": JSON.to_native(preload("res://assets/Tabea Bedienung_2026-02-06_18-59-03.json").data)}
+		print(quizzes)
 		#Constants.NUMBER_QUESTIONS = questions.size()
 		print("Default questions")
 	

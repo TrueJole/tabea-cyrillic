@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rnj2ilf2g3cw" path="res://scripts/header.gd" id="1_35gin"]
 [ext_resource type="PackedScene" uid="uid://cct22xoy1ilbh" path="res://szenes/logo_button.tscn" id="1_cckf8"]
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="1_qauyc"]
 
 [node name="Header" type="Control" unique_id=1407986050]
 custom_minimum_size = Vector2(0, 132.135)
@@ -9,6 +10,7 @@ layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+theme = ExtResource("1_qauyc")
 script = ExtResource("1_35gin")
 titel = "HeaderTitel"
 

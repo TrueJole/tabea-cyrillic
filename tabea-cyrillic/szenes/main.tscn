@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_m6yd5")
 script = ExtResource("1_3rjh4")
 
 [node name="Panel" type="Panel" parent="." unique_id=873860897]
@@ -70,6 +71,7 @@ theme_override_constants/margin_bottom = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1746292060]
 layout_mode = 2
+theme_type_variation = &"SubtleScrollCOntainer"
 horizontal_scroll_mode = 0
 
 [node name="Answers" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer" unique_id=1769548524]

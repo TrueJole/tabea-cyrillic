@@ -12,6 +12,13 @@ variation_opentype = {
 2003265652: 260
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amo77"]
+bg_color = Color(0.348, 0.54906666, 0.58, 1)
+border_width_left = 30
+border_color = Color(0.29400003, 0.4442667, 0.49, 1)
+shadow_color = Color(0, 0, 0, 0.43529412)
+shadow_size = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3kcy"]
 bg_color = Color(0.03137255, 0.5137255, 0.58431375, 1)
 border_width_left = 30
@@ -108,6 +115,15 @@ shadow_color = Color(0, 0, 0, 0.39215687)
 [sub_resource type="FontVariation" id="FontVariation_ubhg7"]
 base_font = ExtResource("1_ubhg7")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdpb8"]
+content_margin_left = 5.0
+content_margin_right = 1.0
+bg_color = Color(0.348, 0.54906666, 0.58, 1)
+border_width_bottom = 30
+border_color = Color(0.29400003, 0.4442667, 0.49, 1)
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_size = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m04c2"]
 content_margin_left = 5.0
 content_margin_right = 1.0
@@ -145,6 +161,8 @@ fill_to = Vector2(0, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdb8"]
 bg_color = Color(0, 0, 0, 0.92156863)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubhg7"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntyar"]
 bg_color = Color(1, 1, 1, 1)
 border_width_bottom = 30
@@ -162,8 +180,9 @@ bg_color = Color(0, 0, 0, 0.23137255)
 BackgroundPanel/base_type = &"Panel"
 BackgroundPanel/styles/panel = SubResource("StyleBoxFlat_o22io")
 Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 120
+Button/font_sizes/font_size = 110
 Button/fonts/font = SubResource("FontVariation_rs583")
+Button/styles/disabled = SubResource("StyleBoxFlat_amo77")
 Button/styles/hover = SubResource("StyleBoxFlat_t3kcy")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_rs583")
 Button/styles/normal = SubResource("StyleBoxFlat_t3kcy")
@@ -187,6 +206,7 @@ Label/styles/normal = SubResource("StyleBoxEmpty_t3kcy")
 LetterLabel/base_type = &"Label"
 LetterLabel/font_sizes/font_size = 450
 LetterLabel/fonts/font = SubResource("FontVariation_re4k2")
+LineEdit/constants/caret_width = 3
 LineEdit/font_sizes/font_size = 70
 LineEdit/fonts/font = ExtResource("1_ubhg7")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_bi2fg")
@@ -211,8 +231,9 @@ QuestionButton/styles/hover_pressed = SubResource("StyleBoxFlat_ocpic")
 QuestionButton/styles/normal = SubResource("StyleBoxFlat_q0he6")
 QuestionButton/styles/pressed = SubResource("StyleBoxFlat_ocpic")
 QuizButton/base_type = &"Button"
-QuizButton/font_sizes/font_size = 100
+QuizButton/font_sizes/font_size = 70
 QuizButton/fonts/font = SubResource("FontVariation_ubhg7")
+QuizButton/styles/disabled = SubResource("StyleBoxFlat_jdpb8")
 QuizButton/styles/hover = SubResource("StyleBoxFlat_m04c2")
 QuizButton/styles/normal = SubResource("StyleBoxFlat_kwfvg")
 QuizButton/styles/pressed = SubResource("StyleBoxFlat_6elo3")
@@ -221,10 +242,13 @@ ScrollContainer/icons/scroll_hint_vertical = SubResource("GradientTexture2D_rs58
 ScrollContainer/styles/panel = SubResource("StyleBoxFlat_ubhg7")
 SettingsBackground/base_type = &"Panel"
 SettingsBackground/styles/panel = SubResource("StyleBoxFlat_4gdb8")
+SubtleScrollCOntainer/base_type = &"ScrollContainer"
+SubtleScrollCOntainer/styles/panel = SubResource("StyleBoxEmpty_ubhg7")
+TextEdit/constants/caret_width = 3
 TextEdit/font_sizes/font_size = 70
 TextEdit/fonts/font = ExtResource("1_ubhg7")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_bi2fg")
-VBoxContainer/constants/separation = 10
+VBoxContainer/constants/separation = 20
 VScrollBar/constants/padding_left = 70
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_ntyar")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ntyar")

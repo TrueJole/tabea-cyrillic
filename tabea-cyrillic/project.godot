@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Табеа"
-config/version="1.0.1"
+config/version="2.0.11"
 run/main_scene="uid://cj28jotdlpd0g"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/low_processor_mode=true
@@ -44,10 +44,6 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
-[gui]
-
-theme/custom="uid://dethatjpkswlp"
-
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -57,4 +53,3 @@ theme/custom="uid://dethatjpkswlp"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-textures/vram_compression/import_etc2_astc=true

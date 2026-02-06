@@ -17,11 +17,21 @@ func _ready() -> void:
 		quiz_button.text = SaveLoad.quizzes[quizID]["name"]
 		if next == "quiz" and SaveLoad.quizzes[quizID]["questions"].size() < 2:
 			quiz_button.disabled = true
+			Constants.selectedQuizzes.erase(quizID)
+		
+		if next == "quiz" and SaveLoad.quizzes[quizID]["questions"].size() >= 2 and quizID in Constants.selectedQuizzes:
+			quiz_button.button_pressed = true
 		else:
-			quiz_button.button_pressed = true if quizID in Constants.selectedQuizzes else false
+			quiz_button.button_pressed = false
 		
 		quiz_button.clicked_on.connect(_on_quiz_clicked_on)
 		%QuizList.add_child(quiz_button)
+
+func _process(delta: float) -> void:
+	if Constants.selectedQuizzes.size() < 1:
+		%DoneButton.disabled = true
+	else:
+		%DoneButton.disabled = false
 
 func _on_quiz_clicked_on(quizID: String, on: bool) -> void:
 	if on and not quizID in Constants.selectedQuizzes: 
@@ -30,8 +40,11 @@ func _on_quiz_clicked_on(quizID: String, on: bool) -> void:
 		Constants.selectedQuizzes.erase(quizID)
 
 func _on_all_button_pressed() -> void:
-	Constants.selectedQuizzes = SaveLoad.quizzes.keys()
-	_on_done_button_pressed()
+	var safeQuizIDs: Array = SaveLoad.quizzes.keys()
+	safeQuizIDs = safeQuizIDs.filter(func(quizID: String) -> bool: return SaveLoad.quizzes[quizID]["questions"].size() >= 2)
+	if safeQuizIDs.size() >= 1:
+		Constants.selectedQuizzes = safeQuizIDs
+		_on_done_button_pressed()
 
 
 func _on_header_logo_clicked() -> void:

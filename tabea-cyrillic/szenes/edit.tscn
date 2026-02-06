@@ -3,8 +3,42 @@
 [ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="1_pweqy"]
 [ext_resource type="PackedScene" uid="uid://cct22xoy1ilbh" path="res://szenes/logo_button.tscn" id="2_2wypn"]
 [ext_resource type="Script" uid="uid://dqxtsnobpg8jo" path="res://scripts/edit.gd" id="2_bxtaq"]
+[ext_resource type="Texture2D" uid="uid://q5ak3drdnvm2" path="res://assets/settings.svg" id="3_7msu2"]
 [ext_resource type="PackedScene" uid="uid://dsdkcsu4lqsrx" path="res://szenes/answer_line_edit.tscn" id="3_sbwty"]
 [ext_resource type="PackedScene" uid="uid://4foia1uo3y5r" path="res://szenes/header.tscn" id="4_bxtaq"]
+[ext_resource type="Script" uid="uid://b87nxnxvc1wyj" path="res://scripts/delete_button.gd" id="7_kccbw"]
+[ext_resource type="Script" uid="uid://dlx7y864dhu5e" path="res://scripts/name_field.gd" id="7_y4o53"]
+[ext_resource type="Script" uid="uid://d3esd6ntv1iiq" path="res://scripts/exit_button.gd" id="8_kccbw"]
+
+[sub_resource type="GDScript" id="GDScript_kccbw"]
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	%Settings.show()
+"
+
+[sub_resource type="GDScript" id="GDScript_p6o1e"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	# OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) + \"/\" + 
+	
+	#var exportFile: FileAccess = FileAccess.open(SaveLoad.quizzes[Constants.editQuiz][\"name\"] + Time.get_date_string_from_system() + \"_\" + Time.get_time_string_from_system().replace(\":\", \"-\") + \".json\", FileAccess.WRITE)
+	#print(exportFile.get_open_error())
+	#exportFile.store_string(JSON.stringify(JSON.from_native(SaveLoad.quizzes[Constants.editQuiz])))
+	#print(exportFile.get_open_error())
+	JavaScriptBridge.download_buffer(JSON.stringify(JSON.from_native(SaveLoad.quizzes[Constants.editQuiz])).to_utf8_buffer(), SaveLoad.quizzes[Constants.editQuiz][\"name\"] + \"_\" + Time.get_date_string_from_system() + \"_\" + Time.get_time_string_from_system().replace(\":\", \"-\") + \".json\")
+"
+
+[sub_resource type="GDScript" id="GDScript_o6rqo"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	SaveLoad.resetSavegameQuiz(Constants.editQuiz)
+	print(\"Reset sepcific savegame\")
+"
 
 [node name="Edit" type="Control" unique_id=2098872861]
 layout_mode = 3
@@ -62,9 +96,25 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="AddButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1828561826]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1566542756]
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=896528846]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_type_variation = &"IconButton"
+theme_override_constants/icon_max_width = 140
+icon = ExtResource("3_7msu2")
+icon_alignment = 1
+script = SubResource("GDScript_kccbw")
+
+[node name="AddButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1828561826]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Add Question"
 
 [node name="LogoButton" parent="." unique_id=419415473 instance=ExtResource("2_2wypn")]
@@ -73,11 +123,10 @@ layout_mode = 1
 
 [node name="Header" parent="." unique_id=1407986050 instance=ExtResource("4_bxtaq")]
 layout_mode = 1
-titel = "Edit Questions"
+titel = "Edit a question"
 
 [node name="EditPage" type="Panel" parent="." unique_id=1417707196]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -94,10 +143,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_top = 145
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EditPage/MarginContainer" unique_id=75180733]
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 0
 theme_override_constants/separation = 65
 
 [node name="QuestionField" type="TextEdit" parent="EditPage/MarginContainer/VBoxContainer" unique_id=701851407]
@@ -126,6 +176,7 @@ custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_pweqy")
+theme_type_variation = &"SubtleScrollCOntainer"
 horizontal_scroll_mode = 0
 scroll_hint_mode = 3
 
@@ -160,8 +211,77 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Done"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
+[node name="Settings" type="Panel" parent="." unique_id=1123940602]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SettingsBackground"
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings" unique_id=712484570]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -464.5
+offset_right = 464.5
+offset_bottom = 1185.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer" unique_id=1121489068]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=1921929805]
+layout_mode = 2
+text = "Configuration"
+
+[node name="DeleteButton" type="Button" parent="Settings/MarginContainer/VBoxContainer" unique_id=1263857984]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Delete Quiz"
+script = ExtResource("7_kccbw")
+
+[node name="ExportQuiz" type="Button" parent="Settings/MarginContainer/VBoxContainer" unique_id=1582198053]
+layout_mode = 2
+text = "Export Quiz"
+script = SubResource("GDScript_p6o1e")
+
+[node name="ResetMemoryButton" type="Button" parent="Settings/MarginContainer/VBoxContainer" unique_id=1705895300]
+layout_mode = 2
+text = "Reset Memory"
+script = SubResource("GDScript_o6rqo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer" unique_id=1030691606]
+layout_mode = 2
+theme_override_constants/margin_top = 41
+
+[node name="NameField" type="LineEdit" parent="Settings/MarginContainer/VBoxContainer" unique_id=698232256]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+placeholder_text = "Name of the quiz"
+script = ExtResource("7_y4o53")
+
+[node name="ExitButton" type="Button" parent="Settings/MarginContainer/VBoxContainer" unique_id=912641483]
+layout_mode = 2
+text = "Exit
+"
+script = ExtResource("8_kccbw")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/SettingsButton" to="MarginContainer/VBoxContainer/HBoxContainer/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
 [connection signal="pressed" from="LogoButton" to="." method="_on_logo_button_pressed"]
 [connection signal="logoClicked" from="Header" to="." method="_on_header_logo_clicked"]
 [connection signal="pressed" from="EditPage/MarginContainer/VBoxContainer2/RemoveButton" to="." method="_on_remove_button_pressed"]
 [connection signal="pressed" from="EditPage/MarginContainer/VBoxContainer2/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/DeleteButton" to="Settings/MarginContainer/VBoxContainer/DeleteButton" method="_on_pressed"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/ExportQuiz" to="Settings/MarginContainer/VBoxContainer/ExportQuiz" method="_on_pressed"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/ResetMemoryButton" to="Settings/MarginContainer/VBoxContainer/ResetMemoryButton" method="_on_pressed"]
+[connection signal="text_changed" from="Settings/MarginContainer/VBoxContainer/NameField" to="Settings/MarginContainer/VBoxContainer/NameField" method="_on_text_changed"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/ExitButton" to="Settings/MarginContainer/VBoxContainer/ExitButton" method="_on_pressed"]
