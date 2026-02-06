@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://dm3032vht7se"]
 
-[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="1_pweqy"]
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="1_pweqy"]
 [ext_resource type="PackedScene" uid="uid://cct22xoy1ilbh" path="res://szenes/logo_button.tscn" id="2_2wypn"]
 [ext_resource type="Script" uid="uid://dqxtsnobpg8jo" path="res://scripts/edit.gd" id="2_bxtaq"]
 [ext_resource type="PackedScene" uid="uid://dsdkcsu4lqsrx" path="res://szenes/answer_line_edit.tscn" id="3_sbwty"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbwty"]
-bg_color = Color(0.0071231346, 0.13136253, 0.17666835, 1)
+[ext_resource type="PackedScene" uid="uid://4foia1uo3y5r" path="res://szenes/header.tscn" id="4_bxtaq"]
 
 [node name="Edit" type="Control" unique_id=2098872861]
 layout_mode = 3
@@ -46,10 +44,10 @@ vertical_scroll_mode = 2
 scroll_hint_mode = 3
 
 [node name="Panel" type="Panel" parent="MarginContainer/ScrollContainer" unique_id=1554382859]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_sbwty")
 
 [node name="QuestionList" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=584622326]
 unique_name_in_owner = true
@@ -70,7 +68,12 @@ layout_mode = 2
 text = "Add Question"
 
 [node name="LogoButton" parent="." unique_id=419415473 instance=ExtResource("2_2wypn")]
+visible = false
 layout_mode = 1
+
+[node name="Header" parent="." unique_id=1407986050 instance=ExtResource("4_bxtaq")]
+layout_mode = 1
+titel = "Edit Questions"
 
 [node name="EditPage" type="Panel" parent="." unique_id=1417707196]
 unique_name_in_owner = true
@@ -159,5 +162,6 @@ text = "Done"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
 [connection signal="pressed" from="LogoButton" to="." method="_on_logo_button_pressed"]
+[connection signal="logoClicked" from="Header" to="." method="_on_header_logo_clicked"]
 [connection signal="pressed" from="EditPage/MarginContainer/VBoxContainer2/RemoveButton" to="." method="_on_remove_button_pressed"]
 [connection signal="pressed" from="EditPage/MarginContainer/VBoxContainer2/DoneButton" to="." method="_on_done_button_pressed"]

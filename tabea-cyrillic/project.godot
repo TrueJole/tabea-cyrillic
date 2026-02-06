@@ -26,6 +26,7 @@ config/low_processor_mode=true
 
 SaveLoad="*uid://c8hws0sw72utq"
 Constants="*uid://bvhv4mc24prag"
+Menu="*uid://dfc30xnj2x8c5"
 
 [debug]
 
@@ -34,7 +35,6 @@ gdscript/warnings/inferred_declaration=2
 gdscript/warnings/unsafe_property_access=1
 gdscript/warnings/unsafe_method_access=1
 gdscript/warnings/unsafe_cast=2
-gdscript/warnings/unsafe_call_argument=2
 
 [display]
 

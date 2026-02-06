@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b04vt18h530x3"]
 
 [ext_resource type="Script" uid="uid://chmnom5ywngk8" path="res://scripts/main.gd" id="1_3rjh4"]
-[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="2_m6yd5"]
-[ext_resource type="PackedScene" uid="uid://cct22xoy1ilbh" path="res://szenes/logo_button.tscn" id="2_rfvpj"]
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="2_m6yd5"]
 [ext_resource type="PackedScene" uid="uid://dbcqiv2obxa3t" path="res://szenes/pronounciation_label.tscn" id="3_4b4it"]
+[ext_resource type="PackedScene" uid="uid://4foia1uo3y5r" path="res://szenes/header.tscn" id="5_drcd3"]
 [ext_resource type="Script" uid="uid://d0eakr55vfq3n" path="res://scripts/autoadjust.gd" id="5_rrd6t"]
 
 [node name="Main" type="Control" unique_id=776756791]
@@ -120,10 +120,11 @@ layout_mode = 2
 theme_type_variation = &"IconButton"
 text = "✓"
 
-[node name="LogoButton" parent="." unique_id=419415473 instance=ExtResource("2_rfvpj")]
+[node name="Header" parent="." unique_id=1407986050 instance=ExtResource("5_drcd3")]
 layout_mode = 1
+titel = "Quiz"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/RevealButton" to="." method="_on_reveal_button_pressed"]
 [connection signal="pressed" from="MarginContainer/EvaluationButtons/WrongButton" to="." method="_on_wrong_button_pressed"]
 [connection signal="pressed" from="MarginContainer/EvaluationButtons/RightButton" to="." method="_on_right_button_pressed"]
-[connection signal="pressed" from="LogoButton" to="." method="_on_logo_button_pressed"]
+[connection signal="logoClicked" from="Header" to="." method="_on_header_logo_clicked"]

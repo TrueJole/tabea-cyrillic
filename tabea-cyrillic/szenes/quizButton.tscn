@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://yxe3xq01ans8"]
+
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="1_g637x"]
+[ext_resource type="Script" uid="uid://bvaerbpgo1wpo" path="res://scripts/quiz_button.gd" id="2_g637x"]
+
+[node name="Button" type="Button" unique_id=833730774]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme = ExtResource("1_g637x")
+theme_type_variation = &"QuizButton"
+toggle_mode = true
+text = "Test Text 123 dies ist eine mmmmmmmmmmmm  ugj ihjhjh ihkihjhj"
+alignment = 0
+text_overrun_behavior = 5
+script = ExtResource("2_g637x")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

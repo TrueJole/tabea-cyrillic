@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsdkcsu4lqsrx"]
 
-[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="1_stbvd"]
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="1_stbvd"]
 [ext_resource type="Script" uid="uid://cor6ll3fexj0g" path="res://scripts/answer_line_edit.gd" id="2_bs5u7"]
 
 [node name="AnswerLineEdit" type="LineEdit" unique_id=2098261729]
