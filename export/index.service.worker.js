@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1770410823|7858583581';
+const CACHE_VERSION = '1770421476|3666226623';
 /** @type {string} */
 const CACHE_PREFIX = 'Табеа-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;

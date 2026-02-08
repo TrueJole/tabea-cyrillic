@@ -11,6 +11,10 @@ var quizzes: Dictionary # Array of Dictionary of Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# update pwa if necessary
+	if JavaScriptBridge.pwa_needs_update():
+		JavaScriptBridge.pwa_update()
+	
 	# load questions
 	var file: FileAccess = FileAccess.open(QUIZ_FILENAME, FileAccess.READ)
 	if FileAccess.file_exists(QUIZ_FILENAME):
