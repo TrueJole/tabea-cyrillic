@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://4foia1uo3y5r"]
+
+[ext_resource type="Script" uid="uid://rnj2ilf2g3cw" path="res://scripts/header.gd" id="1_35gin"]
+[ext_resource type="PackedScene" uid="uid://cct22xoy1ilbh" path="res://szenes/logo_button.tscn" id="1_cckf8"]
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="1_qauyc"]
+
+[node name="Header" type="Control" unique_id=1407986050]
+custom_minimum_size = Vector2(0, 132.135)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme = ExtResource("1_qauyc")
+script = ExtResource("1_35gin")
+titel = "HeaderTitel"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=759521929]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="LogoButton" parent="MarginContainer" unique_id=1251298485 instance=ExtResource("1_cckf8")]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+
+[node name="TitelLabel" type="Label" parent="MarginContainer" unique_id=221566240]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "HeaderTitel"
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/LogoButton" to="." method="_on_logo_button_pressed"]

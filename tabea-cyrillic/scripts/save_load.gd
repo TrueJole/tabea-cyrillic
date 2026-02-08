@@ -1,23 +1,27 @@
 extends Node
 
-const FILENAME: String = "user://savefile.json"
+const FILENAME: String = "user://savegames.json"
 const QUESTION_FILENAME: String = "user://questions.json"
+const QUIZ_FILENAME: String = "user://quizzes.json"
 
-var savegame: Array[int]
-var questions: Array#[Dictionary]
+var savegame: Dictionary
+#var questions: Array#[Dictionary]
+var quizzes: Dictionary # Array of Dictionary of Array
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# load questions
-	var file: FileAccess = FileAccess.open(QUESTION_FILENAME, FileAccess.READ)
-	if FileAccess.file_exists(QUESTION_FILENAME):
+	var file: FileAccess = FileAccess.open(QUIZ_FILENAME, FileAccess.READ)
+	if FileAccess.file_exists(QUIZ_FILENAME):
 		print(JSON.to_native(JSON.parse_string(file.get_as_text())))
-		questions = JSON.to_native(JSON.parse_string(file.get_as_text()))
-		Constants.NUMBER_QUESTIONS = questions.size()
+		quizzes = JSON.to_native(JSON.parse_string(file.get_as_text()))
+		#Constants.NUMBER_QUESTIONS = questions.size()
 		print("Loaded questions")
 	else:
-		questions = preload("res://assets/letters.json").data
-		Constants.NUMBER_QUESTIONS = questions.size()
+		quizzes = { "a": JSON.to_native(preload("res://assets/Kyrillische Buchstaben_2026-02-06_18-56-58.json").data), "b": JSON.to_native(preload("res://assets/Tabea Bedienung_2026-02-06_18-59-03.json").data)}
+		print(quizzes)
+		#Constants.NUMBER_QUESTIONS = questions.size()
 		print("Default questions")
 	
 	# load savegame
@@ -25,23 +29,40 @@ func _ready() -> void:
 	if FileAccess.file_exists(FILENAME):
 		print(JSON.to_native(JSON.parse_string(file.get_as_text())))
 		savegame = JSON.to_native(JSON.parse_string(file.get_as_text()))
-		if savegame.size() != Constants.NUMBER_QUESTIONS:
-			print("Loaded savegame, but does not match questions")
-			resetSavegame()
+		#if savegame.size() != Constants.NUMBER_QUESTIONS:
+		#	print("Loaded savegame, but does not match questions")
+		#	resetSavegame()
 	else:
 		print("No savefile found")
-		resetSavegame()
+		generateSavegames()
+		#resetSavegame()
 
-func resetSavegame() -> void:
+func generateSavegames() -> void:
+	print("Generating savegame")
+	savegame = {}
+	for quizID: String in quizzes.keys():
+		savegame[quizID] = []
+		savegame[quizID].resize(quizzes[quizID]["questions"].size())
+		savegame[quizID].fill(0)
+	writeSavegame()
+
+func resetSavegameQuiz(quizID: String) -> void:
 	print("Resetting savegame")
-	savegame = []
-	Constants.NUMBER_QUESTIONS = questions.size()
-	savegame.resize(Constants.NUMBER_QUESTIONS)
+	savegame[quizID] = []
+	#Constants.NUMBER_QUESTIONS = questions.size()
+	savegame[quizID].resize(quizzes[quizID]["questions"].size())
+	savegame[quizID].fill(0)
+	writeSavegame()
 
-func writeQuestions() -> void:
-	var file: FileAccess = FileAccess.open(QUESTION_FILENAME, FileAccess.WRITE)
-	file.store_string(JSON.stringify(JSON.from_native(questions)))
-	print("Writing questions")
+#func writeQuestions() -> void:
+	#var file: FileAccess = FileAccess.open(QUESTION_FILENAME, FileAccess.WRITE)
+	#file.store_string(JSON.stringify(JSON.from_native(questions)))
+	#print("Writing questions")
+
+func writeQuizzes() -> void:
+	var file: FileAccess = FileAccess.open(QUIZ_FILENAME, FileAccess.WRITE)
+	file.store_string(JSON.stringify(JSON.from_native(quizzes)))
+	print("Writing quizzes")
 
 func writeSavegame() -> void:
 	var file: FileAccess = FileAccess.open(FILENAME, FileAccess.WRITE)

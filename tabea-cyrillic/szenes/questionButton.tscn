@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gjocejk3rjyb"]
 
-[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://mainTheme.tres" id="1_eafgb"]
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="1_eafgb"]
 [ext_resource type="Script" uid="uid://du6s0eijjno6i" path="res://scripts/question_button.gd" id="2_otv3e"]
 
 [node name="Button" type="Button" unique_id=833730774]

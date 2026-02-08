@@ -1,3 +1,6 @@
+{ 
+	"name" : "Cyrillic Letters",
+	"questions":
 [
 	{
 		"question" : "Аа",
@@ -131,3 +134,4 @@
 		"answers" : ["wie ja in Japan", "unbetont ähnlich wie i"]
 	}
 ]
+}

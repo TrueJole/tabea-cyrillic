@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bsjups11m8bn3"]
+
+[ext_resource type="Script" uid="uid://cfgwvukft0wlf" path="res://scripts/choose_quiz_edit.gd" id="1_emua8"]
+[ext_resource type="Theme" uid="uid://dethatjpkswlp" path="res://assets/mainTheme.tres" id="2_rjrqi"]
+[ext_resource type="PackedScene" uid="uid://4foia1uo3y5r" path="res://szenes/header.tscn" id="3_2losr"]
+
+[node name="ChooseQuiz" type="Control" unique_id=750039972]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_rjrqi")
+script = ExtResource("1_emua8")
+
+[node name="Panel" type="Panel" parent="." unique_id=1138366565]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_rjrqi")
+theme_type_variation = &"BackgroundPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=415937424]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 140
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=922771671]
+custom_minimum_size = Vector2(0, 1377.805)
+layout_mode = 2
+size_flags_vertical = 0
+vertical_scroll_mode = 2
+scroll_hint_mode = 3
+
+[node name="QuizList" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=648090939]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1488544873]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1986445701]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="ImportButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1035445941]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Import Quiz"
+
+[node name="AddButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=537528882]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add Quiz"
+
+[node name="Header" parent="." unique_id=1407986050 instance=ExtResource("3_2losr")]
+layout_mode = 1
+titel = "Edit a quiz"
+
+[node name="Label" type="Label" parent="." unique_id=813197467]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -49.0
+offset_right = 20.5
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "dgfsdgdd"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ImportButton" to="." method="_on_import_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="logoClicked" from="Header" to="." method="_on_header_logo_clicked"]
